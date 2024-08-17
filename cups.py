@@ -15,6 +15,7 @@ fps = 30
 frame_interval = int(1000 / fps)
 
 frame_count = 0
+
 while True:
     ret, frame = cam.read()
     # Check if frame is captured
@@ -31,7 +32,7 @@ while True:
     frame_resized = cv2.resize(frame_rgb, (640, 480))
 
     # Predict on the frame
-    result = model.predict(frame, confidence=80, overlap=50).json()
+    result = model.predict(frame, confidence=90, overlap=50).json()
 
     # cup counter
     cup_counter = 0
